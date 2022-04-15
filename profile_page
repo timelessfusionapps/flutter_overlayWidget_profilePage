@@ -1,0 +1,112 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_overlays_app/constants/constants.dart';
+import 'package:flutter_overlays_app/widgets/country_form_field.dart';
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Profile Page',
+        ),
+      ),
+      body: Form(
+          child: ListView(
+        padding: const EdgeInsets.all(14.0),
+        shrinkWrap: true,
+        children: [
+          TextFormField(
+            autofocus: false,
+            keyboardType: TextInputType.name,
+            textCapitalization: TextCapitalization.words,
+            textInputAction: TextInputAction.next,
+            decoration: kTextInputDecoration.copyWith(labelText: 'First Name'),
+          ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          TextFormField(
+            keyboardType: TextInputType.name,
+            textCapitalization: TextCapitalization.words,
+            textInputAction: TextInputAction.next,
+            decoration: kTextInputDecoration.copyWith(labelText: 'Father Name'),
+          ),
+          const SizedBox(height: 20),
+          TextFormField(
+            keyboardType: TextInputType.name,
+            textCapitalization: TextCapitalization.words,
+            textInputAction: TextInputAction.next,
+            decoration: kTextInputDecoration.copyWith(labelText: 'Last Name'),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+         const CountryFormField(),
+          const SizedBox(
+            height: 20,
+          ),
+          TextFormField(
+            keyboardType: TextInputType.text,
+            textCapitalization: TextCapitalization.words,
+            textInputAction: TextInputAction.next,
+            decoration: kTextInputDecoration.copyWith(labelText: 'City Name'),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextFormField(
+            keyboardType: TextInputType.phone,
+            textInputAction: TextInputAction.next,
+            decoration:
+                kTextInputDecoration.copyWith(labelText: 'Mobile Number'),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextFormField(
+            keyboardType: TextInputType.multiline,
+            textInputAction: TextInputAction.next,
+            maxLines: 3,
+            decoration:
+                kTextInputDecoration.copyWith(labelText: 'Address Line 1'),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextFormField(
+            keyboardType: TextInputType.multiline,
+            textInputAction: TextInputAction.next,
+            maxLines: 3,
+            decoration: kTextInputDecoration.copyWith(
+              labelText: 'Address Line 2',
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextFormField(
+            keyboardType: TextInputType.emailAddress,
+            textInputAction: TextInputAction.next,
+            decoration: kTextInputDecoration.copyWith(labelText: 'Email'),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          TextFormField(
+            keyboardType: TextInputType.visiblePassword,
+            obscureText: true,
+            textInputAction: TextInputAction.done,
+            decoration: kTextInputDecoration.copyWith(labelText: 'Password'),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(onPressed: () {}, child: const Text('SUBMIT'))
+        ],
+      )),
+    );
+  }
+}
